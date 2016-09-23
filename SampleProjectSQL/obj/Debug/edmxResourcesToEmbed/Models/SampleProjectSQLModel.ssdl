@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CmpContext1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Job">
+    <Key>
+      <PropertyRef Name="JobID" />
+    </Key>
+    <Property Name="JobID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobTitle" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="ExpireDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CmpContext1ModelStoreContainer">
+    <EntitySet Name="Job" EntityType="Self.Job" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
