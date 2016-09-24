@@ -7,10 +7,10 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Work</h4>
         <hr />
@@ -43,9 +43,11 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ExpireDate, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ExpireDate)
+                @Html.EditorFor(model => model.ExpireDate, new{@class="datepicker form-control"})
                 @Html.ValidationMessageFor(model => model.ExpireDate)
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (mm/dd/yyyy)
             </div>
+
         </div>
 
         <div class="form-group">
@@ -62,4 +64,12 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+<script>
+    $(document).ready(function () {
+        $('.datetimepicker').datetimepicker({
+            format: 'lll'
+        });
+    });
+</script>
+
 }
